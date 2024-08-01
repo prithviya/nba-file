@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.9/dist/css/uikit.min.css" />
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.9/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.9/dist/js/uikit-icons.min.js"></script>
+    <title>NBA Document</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .main-content {
+            position: relative;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1676%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='url(%26quot%3b%23SvgjsLinearGradient1677%26quot%3b)'%3e%3c/rect%3e%3cpath d='M273.637%2c139.822C308.785%2c141.033%2c342.625%2c124.057%2c360.701%2c93.889C379.275%2c62.89%2c379.774%2c24.072%2c361.764%2c-7.258C343.696%2c-38.689%2c309.887%2c-58.116%2c273.637%2c-57.566C238.29%2c-57.029%2c206.578%2c-35.887%2c190.025%2c-4.651C174.451%2c24.738%2c179.717%2c59.441%2c196.377%2c88.228C213.002%2c116.955%2c240.466%2c138.679%2c273.637%2c139.822' fill='rgba(36%2c 122%2c 48%2c 0.56)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M406.797%2c698.12C455.006%2c698.807%2c507.284%2c686.461%2c530.514%2c644.212C553.185%2c602.981%2c534.348%2c553.314%2c507.766%2c514.489C484.937%2c481.145%2c447.206%2c463.742%2c406.797%2c463.513C365.93%2c463.281%2c326.44%2c479.292%2c303.826%2c513.333C278.465%2c551.51%2c266.734%2c600.731%2c289.044%2c640.768C311.822%2c681.644%2c360.008%2c697.453%2c406.797%2c698.12' fill='rgba(36%2c 122%2c 48%2c 0.56)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M500.864%2c194.74C547.799%2c194.524%2c590.958%2c167.019%2c612.348%2c125.242C632.11%2c86.644%2c620.456%2c41.894%2c598.165%2c4.699C576.626%2c-31.241%2c542.755%2c-59.912%2c500.864%2c-60.778C457.579%2c-61.673%2c418.76%2c-36.507%2c396.334%2c0.526C373.007%2c39.047%2c366.246%2c86.621%2c387.589%2c126.276C410%2c167.915%2c453.577%2c194.957%2c500.864%2c194.74' fill='rgba(36%2c 122%2c 48%2c 0.56)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M315.983%2c336.702C350.736%2c335.523%2c371.49%2c301.965%2c388.241%2c271.493C404.157%2c242.54%2c417.021%2c209.533%2c402.095%2c180.058C385.921%2c148.117%2c351.78%2c129.454%2c315.983%2c128.795C278.985%2c128.113%2c242.016%2c144.351%2c224.195%2c176.781C206.908%2c208.239%2c216.837%2c245.569%2c234.705%2c276.701C252.672%2c308.004%2c279.911%2c337.926%2c315.983%2c336.702' fill='rgba(36%2c 122%2c 48%2c 0.56)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M936.86 437.4 a122.34 122.34 0 1 0 244.68 0 a122.34 122.34 0 1 0 -244.68 0z' fill='rgba(36%2c 122%2c 48%2c 0.56)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M212.716%2c261.558C256.356%2c261.444%2c303.002%2c251.616%2c325.26%2c214.079C347.859%2c175.967%2c335.798%2c129.199%2c314.11%2c90.562C291.848%2c50.902%2c258.139%2c15.872%2c212.716%2c13.584C163.643%2c11.112%2c116.104%2c36.588%2c91.941%2c79.371C68.137%2c121.52%2c72.403%2c174.323%2c99.149%2c214.669C123.403%2c251.256%2c168.82%2c261.673%2c212.716%2c261.558' fill='rgba(36%2c 122%2c 48%2c 0.56)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1200.975%2c380.773C1227.982%2c380.448%2c1247.892%2c358.491%2c1261.083%2c334.922C1273.898%2c312.024%2c1280.32%2c284.704%2c1267.58%2c261.764C1254.523%2c238.253%2c1227.868%2c226.586%2c1200.975%2c226.691C1174.278%2c226.796%2c1148.51%2c239.101%2c1135.268%2c262.282C1122.123%2c285.294%2c1125.452%2c313.224%2c1138.304%2c336.401C1151.608%2c360.393%2c1173.543%2c381.104%2c1200.975%2c380.773' fill='rgba(36%2c 122%2c 48%2c 0.56)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M832.673%2c449.935C880.639%2c448.205%2c931.431%2c440.864%2c957.657%2c400.665C986.07%2c357.114%2c987.736%2c298.965%2c959.765%2c255.129C933.495%2c213.959%2c881.492%2c206.118%2c832.673%2c204.794C780.487%2c203.379%2c722.679%2c204.912%2c693.051%2c247.895C660.124%2c295.665%2c658.049%2c362.55%2c691.034%2c410.281C720.909%2c453.512%2c780.158%2c451.829%2c832.673%2c449.935' fill='rgba(36%2c 122%2c 48%2c 0.56)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M524.417%2c665.964C564.818%2c666.902%2c600.656%2c639.42%2c618.494%2c603.158C634.53%2c570.559%2c622.837%2c533.968%2c604.884%2c502.384C586.651%2c470.309%2c561.288%2c438.975%2c524.417%2c437.654C485.743%2c436.269%2c451.644%2c462.161%2c433.305%2c496.239C415.899%2c528.584%2c420.237%2c566.597%2c437.61%2c598.96C456.14%2c633.478%2c485.251%2c665.055%2c524.417%2c665.964' fill='rgba(36%2c 122%2c 48%2c 0.56)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1147.92 517.69 a141.79 141.79 0 1 0 283.58 0 a141.79 141.79 0 1 0 -283.58 0z' fill='rgba(36%2c 122%2c 48%2c 0.56)' class='triangle-float2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1676'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='15.28%25' y1='139.29%25' x2='84.72%25' y2='-39.29%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1677'%3e%3cstop stop-color='rgba(205%2c 244%2c 180%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(154%2c 221%2c 175%2c 1)' offset='0.16'%3e%3c/stop%3e%3cstop stop-color='rgba(131%2c 208%2c 155%2c 1)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+
+        /* Generate multiple snowflakes */
+        .snowflake:nth-child(1) { left: 10%; animation-duration: 5s; }
+        .snowflake:nth-child(2) { left: 20%; animation-duration: 4s; animation-delay: 1s; }
+        .snowflake:nth-child(3) { left: 30%; animation-duration: 6s; animation-delay: 2s; }
+        .snowflake:nth-child(4) { left: 40%; animation-duration: 5s; animation-delay: 1s; }
+        .snowflake:nth-child(5) { left: 50%; animation-duration: 4s; }
+        .snowflake:nth-child(6) { left: 60%; animation-duration: 6s; animation-delay: 2s; }
+        .snowflake:nth-child(7) { left: 70%; animation-duration: 5s; animation-delay: 1s; }
+        .snowflake:nth-child(8) { left: 80%; animation-duration: 4s; }
+        .snowflake:nth-child(9) { left: 90%; animation-duration: 6s; animation-delay: 2s; }
+
+        /* btn */
+        .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 13rem;
+  overflow: hidden;
+  height: 3rem;
+  background-size: 300% 300%;
+  backdrop-filter: blur(1rem);
+  border-radius: 5rem;
+  transition: 0.5s;
+  animation: gradient_301 5s ease infinite;
+  border: double 4px transparent;
+  background-image: linear-gradient(#212121, #212121),  linear-gradient(137.48deg, #ffdb3b 10%,#FE53BB 45%, #8F51EA 67%, #0044ff 87%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+#container-stars {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: 0.5s;
+  backdrop-filter: blur(1rem);
+  border-radius: 5rem;
+}
+
+strong {
+  z-index: 2;
+  font-family: 'Avalors Personal Use';
+  font-size: 12px;
+  letter-spacing: 5px;
+  color: #FFFFFF;
+  text-shadow: 0 0 4px white;
+}
+
+#glow {
+  position: absolute;
+  display: flex;
+  width: 12rem;
+}
+
+.circle {
+  width: 100%;
+  height: 30px;
+  filter: blur(2rem);
+  animation: pulse_3011 4s infinite;
+  z-index: -1;
+}
+
+.circle:nth-of-type(1) {
+  background: rgba(254, 83, 186, 0.636);
+}
+
+.circle:nth-of-type(2) {
+  background: rgba(142, 81, 234, 0.704);
+}
+
+.btn:hover #container-stars {
+  z-index: 1;
+  background-color: lightsteelblue;
+}
+
+.btn:hover {
+  transform: scale(1.1)
+}
+
+.btn:active {
+  border: double 4px #FE53BB;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  animation: none;
+}
+
+.btn:active .circle {
+  background: #FE53BB;
+}
+
+#stars {
+  position: relative;
+  background: transparent;
+  width: 200rem;
+  height: 200rem;
+}
+
+#stars::after {
+  content: "";
+  position: absolute;
+  top: -10rem;
+  left: -100rem;
+  width: 100%;
+  height: 100%;
+  animation: animStarRotate 90s linear infinite;
+}
+
+#stars::after {
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+}
+
+#stars::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 170%;
+  height: 500%;
+  animation: animStar 60s linear infinite;
+}
+
+#stars::before {
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+  opacity: 0.5;
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-135rem);
+  }
+}
+
+@keyframes animStarRotate {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0);
+  }
+}
+
+@keyframes gradient_301 {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse_3011 {
+  0% {
+    transform: scale(0.75);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.75);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <div class="overlay">
+            <!-- Snowflakes -->
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            
+            <!-- Navbar or other content -->
+            <div uk-sticky="start: 170; animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent; end: ! *; offset: 80" class="uk-padding">
+                <nav class="uk-navbar-container">
+                    <div class="uk-container">
+                        <div uk-navbar>
+                            <div class="uk-navbar-center">
+                                <a class="uk-navbar-item uk-logo" href="#">
+                                    <img src="https://rathinamtechnicalcampus.com/wp-content/uploads/2023/06/R-Black-01-1-2048x320.png" alt="" width="50%">
+                                </a>                
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="uk-container">
+                <div class="uk-child-width-1-4@m uk-grid-small uk-grid-match uk-margin-top" uk-grid>
+                    <div>
+                        <div class="uk-card">
+                            <button class="btn" type="button" uk-toggle="target: #modal-example">
+                                <strong>POSH Committee</strong>
+                                <div id="container-stars">
+                                  <div id="stars"></div>
+                                </div>
+                              
+                                <div id="glow">
+                                  <div class="circle"></div>
+                                  <div class="circle"></div>
+                                </div>
+                              </button> 
+                              <div id="modal-example" uk-modal>
+                                <div class="uk-modal-dialog uk-modal-body">
+                                    <h2 class="uk-modal-title">Headline</h2>
+                                    <iframe src="./Internal-Complaints-Committee-POSH-latest-1.pdf" width="100%" height="500px"></iframe>
+                                    <p class="uk-text-right">
+                                        <button class="uk-button uk-button-default uk-modal-close" type="button">Back</button>
+                                    </p>
+                                </div>
+                            </div>                             
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-card">
+                            <button class="btn" type="button" uk-toggle="target: #modal-example">
+                                <strong>POSH Committee</strong>
+                                <div id="container-stars">
+                                  <div id="stars"></div>
+                                </div>
+                              
+                                <div id="glow">
+                                  <div class="circle"></div>
+                                  <div class="circle"></div>
+                                </div>
+                              </button> 
+                              <div id="modal-example" uk-modal>
+                                <div class="uk-modal-dialog uk-modal-body">
+                                    <h2 class="uk-modal-title">Headline</h2>
+                                    <iframe src="./Internal-Complaints-Committee-POSH-latest-1.pdf" width="100%" height="500px"></iframe>
+                                    <p class="uk-text-right">
+                                        <button class="uk-button uk-button-default uk-modal-close" type="button">Back</button>
+                                    </p>
+                                </div>
+                            </div>                             
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-card">
+                            <button class="btn" type="button" uk-toggle="target: #modal-example">
+                                <strong>POSH Committee</strong>
+                                <div id="container-stars">
+                                  <div id="stars"></div>
+                                </div>
+                              
+                                <div id="glow">
+                                  <div class="circle"></div>
+                                  <div class="circle"></div>
+                                </div>
+                              </button> 
+                              <div id="modal-example" uk-modal>
+                                <div class="uk-modal-dialog uk-modal-body">
+                                    <h2 class="uk-modal-title">Headline</h2>
+                                    <iframe src="./Internal-Complaints-Committee-POSH-latest-1.pdf" width="100%" height="500px"></iframe>
+                                    <p class="uk-text-right">
+                                        <button class="uk-button uk-button-default uk-modal-close" type="button">Back</button>
+                                    </p>
+                                </div>
+                            </div>                             
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-card">
+                            <button class="btn" type="button" uk-toggle="target: #modal-example">
+                                <strong>POSH Committee</strong>
+                                <div id="container-stars">
+                                  <div id="stars"></div>
+                                </div>
+                              
+                                <div id="glow">
+                                  <div class="circle"></div>
+                                  <div class="circle"></div>
+                                </div>
+                              </button> 
+                              <div id="modal-example" uk-modal>
+                                <div class="uk-modal-dialog uk-modal-body">
+                                    <h2 class="uk-modal-title">Headline</h2>
+                                    <iframe src="./Internal-Complaints-Committee-POSH-latest-1.pdf" width="100%" height="500px"></iframe>
+                                    <p class="uk-text-right">
+                                        <button class="uk-button uk-button-default uk-modal-close" type="button">Back</button>
+                                    </p>
+                                </div>
+                            </div>                             
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-card">
+                            <button class="btn" type="button" uk-toggle="target: #modal-example">
+                                <strong>POSH Committee</strong>
+                                <div id="container-stars">
+                                  <div id="stars"></div>
+                                </div>
+                              
+                                <div id="glow">
+                                  <div class="circle"></div>
+                                  <div class="circle"></div>
+                                </div>
+                              </button> 
+                              <div id="modal-example" uk-modal>
+                                <div class="uk-modal-dialog uk-modal-body">
+                                    <h2 class="uk-modal-title">Headline</h2>
+                                    <iframe src="./Internal-Complaints-Committee-POSH-latest-1.pdf" width="100%" height="500px"></iframe>
+                                    <p class="uk-text-right">
+                                        <button class="uk-button uk-button-default uk-modal-close" type="button">Back</button>
+                                    </p>
+                                </div>
+                            </div>                             
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-card">
+                            <button class="btn" type="button" uk-toggle="target: #modal-example">
+                                <strong>POSH Committee</strong>
+                                <div id="container-stars">
+                                  <div id="stars"></div>
+                                </div>
+                              
+                                <div id="glow">
+                                  <div class="circle"></div>
+                                  <div class="circle"></div>
+                                </div>
+                              </button> 
+                              <div id="modal-example" uk-modal>
+                                <div class="uk-modal-dialog uk-modal-body">
+                                    <h2 class="uk-modal-title">Headline</h2>
+                                    <iframe src="./Internal-Complaints-Committee-POSH-latest-1.pdf" width="100%" height="500px"></iframe>
+                                    <p class="uk-text-right">
+                                        <button class="uk-button uk-button-default uk-modal-close" type="button">Back</button>
+                                    </p>
+                                </div>
+                            </div>                             
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-card">
+                            <button class="btn" type="button" uk-toggle="target: #modal-example">
+                                <strong>POSH Committee</strong>
+                                <div id="container-stars">
+                                  <div id="stars"></div>
+                                </div>
+                              
+                                <div id="glow">
+                                  <div class="circle"></div>
+                                  <div class="circle"></div>
+                                </div>
+                              </button> 
+                              <div id="modal-example" uk-modal>
+                                <div class="uk-modal-dialog uk-modal-body">
+                                    <h2 class="uk-modal-title">Headline</h2>
+                                    <iframe src="./Internal-Complaints-Committee-POSH-latest-1.pdf" width="100%" height="500px"></iframe>
+                                    <p class="uk-text-right">
+                                        <button class="uk-button uk-button-default uk-modal-close" type="button">Back</button>
+                                    </p>
+                                </div>
+                            </div>                             
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-card">
+                            <button class="btn" type="button" uk-toggle="target: #modal-example">
+                                <strong>POSH Committee</strong>
+                                <div id="container-stars">
+                                  <div id="stars"></div>
+                                </div>
+                              
+                                <div id="glow">
+                                  <div class="circle"></div>
+                                  <div class="circle"></div>
+                                </div>
+                              </button> 
+                              <div id="modal-example" uk-modal>
+                                <div class="uk-modal-dialog uk-modal-body">
+                                    <h2 class="uk-modal-title">Headline</h2>
+                                    <iframe src="./Internal-Complaints-Committee-POSH-latest-1.pdf" width="100%" height="500px"></iframe>
+                                    <p class="uk-text-right">
+                                        <button class="uk-button uk-button-default uk-modal-close" type="button">Back</button>
+                                    </p>
+                                </div>
+                            </div>                             
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-card">
+                            <button class="btn" type="button" uk-toggle="target: #modal-example">
+                                <strong>POSH Committee</strong>
+                                <div id="container-stars">
+                                  <div id="stars"></div>
+                                </div>
+                              
+                                <div id="glow">
+                                  <div class="circle"></div>
+                                  <div class="circle"></div>
+                                </div>
+                              </button> 
+                              <div id="modal-example" uk-modal>
+                                <div class="uk-modal-dialog uk-modal-body">
+                                    <h2 class="uk-modal-title">Headline</h2>
+                                    <iframe src="./Internal-Complaints-Committee-POSH-latest-1.pdf" width="100%" height="500px"></iframe>
+                                    <p class="uk-text-right">
+                                        <button class="uk-button uk-button-default uk-modal-close" type="button">Back</button>
+                                    </p>
+                                </div>
+                            </div>                             
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-card">
+                            <button class="btn" type="button" uk-toggle="target: #modal-example">
+                                <strong>POSH Committee</strong>
+                                <div id="container-stars">
+                                  <div id="stars"></div>
+                                </div>
+                              
+                                <div id="glow">
+                                  <div class="circle"></div>
+                                  <div class="circle"></div>
+                                </div>
+                              </button> 
+                              <div id="modal-example" uk-modal>
+                                <div class="uk-modal-dialog uk-modal-body">
+                                    <h2 class="uk-modal-title">Headline</h2>
+                                    <iframe src="./Internal-Complaints-Committee-POSH-latest-1.pdf" width="100%" height="500px"></iframe>
+                                    <p class="uk-text-right">
+                                        <button class="uk-button uk-button-default uk-modal-close" type="button">Back</button>
+                                    </p>
+                                </div>
+                            </div>                             
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-card">
+                            <button class="btn" type="button" uk-toggle="target: #modal-example">
+                                <strong>POSH Committee</strong>
+                                <div id="container-stars">
+                                  <div id="stars"></div>
+                                </div>
+                              
+                                <div id="glow">
+                                  <div class="circle"></div>
+                                  <div class="circle"></div>
+                                </div>
+                              </button> 
+                              <div id="modal-example" uk-modal>
+                                <div class="uk-modal-dialog uk-modal-body">
+                                    <h2 class="uk-modal-title">Headline</h2>
+                                    <iframe src="./Internal-Complaints-Committee-POSH-latest-1.pdf" width="100%" height="500px"></iframe>
+                                    <p class="uk-text-right">
+                                        <button class="uk-button uk-button-default uk-modal-close" type="button">Back</button>
+                                    </p>
+                                </div>
+                            </div>                             
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-card">
+                            <button class="btn" type="button" uk-toggle="target: #modal-example">
+                                <strong>POSH Committee</strong>
+                                <div id="container-stars">
+                                  <div id="stars"></div>
+                                </div>
+                              
+                                <div id="glow">
+                                  <div class="circle"></div>
+                                  <div class="circle"></div>
+                                </div>
+                              </button> 
+                              <div id="modal-example" uk-modal>
+                                <div class="uk-modal-dialog uk-modal-body">
+                                    <h2 class="uk-modal-title">Headline</h2>
+                                    <iframe src="./Internal-Complaints-Committee-POSH-latest-1.pdf" width="100%" height="500px"></iframe>
+                                    <p class="uk-text-right">
+                                        <button class="uk-button uk-button-default uk-modal-close" type="button">Back</button>
+                                    </p>
+                                </div>
+                            </div>                             
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-card">
+                            <button class="btn" type="button" uk-toggle="target: #modal-example">
+                                <strong>POSH Committee</strong>
+                                <div id="container-stars">
+                                  <div id="stars"></div>
+                                </div>
+                              
+                                <div id="glow">
+                                  <div class="circle"></div>
+                                  <div class="circle"></div>
+                                </div>
+                              </button> 
+                              <div id="modal-example" uk-modal>
+                                <div class="uk-modal-dialog uk-modal-body">
+                                    <h2 class="uk-modal-title">Headline</h2>
+                                    <iframe src="./Internal-Complaints-Committee-POSH-latest-1.pdf" width="100%" height="500px"></iframe>
+                                    <p class="uk-text-right">
+                                        <button class="uk-button uk-button-default uk-modal-close" type="button">Back</button>
+                                    </p>
+                                </div>
+                            </div>                             
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-card">
+                            <button class="btn" type="button" uk-toggle="target: #modal-example">
+                                <strong>POSH Committee</strong>
+                                <div id="container-stars">
+                                  <div id="stars"></div>
+                                </div>
+                              
+                                <div id="glow">
+                                  <div class="circle"></div>
+                                  <div class="circle"></div>
+                                </div>
+                              </button> 
+                              <div id="modal-example" uk-modal>
+                                <div class="uk-modal-dialog uk-modal-body">
+                                    <h2 class="uk-modal-title">Headline</h2>
+                                    <iframe src="./Internal-Complaints-Committee-POSH-latest-1.pdf" width="100%" height="500px"></iframe>
+                                    <p class="uk-text-right">
+                                        <button class="uk-button uk-button-default uk-modal-close" type="button">Back</button>
+                                    </p>
+                                </div>
+                            </div>                             
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-card">
+                            <button class="btn" type="button" uk-toggle="target: #modal-example">
+                                <strong>POSH Committee</strong>
+                                <div id="container-stars">
+                                  <div id="stars"></div>
+                                </div>
+                              
+                                <div id="glow">
+                                  <div class="circle"></div>
+                                  <div class="circle"></div>
+                                </div>
+                              </button> 
+                              <div id="modal-example" uk-modal>
+                                <div class="uk-modal-dialog uk-modal-body">
+                                    <h2 class="uk-modal-title">Headline</h2>
+                                    <iframe src="./Internal-Complaints-Committee-POSH-latest-1.pdf" width="100%" height="500px"></iframe>
+                                    <p class="uk-text-right">
+                                        <button class="uk-button uk-button-default uk-modal-close" type="button">Back</button>
+                                    </p>
+                                </div>
+                            </div>                             
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
