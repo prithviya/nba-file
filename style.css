@@ -13,12 +13,10 @@ html {
 
 .main-content {
     position: relative;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask2312%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='url(%26quot%3b%23SvgjsLinearGradient2313%26quot%3b)'%3e%3c/rect%3e%3cpath d='M522.12 328.48 a183.49 183.49 0 1 0 366.98 0 a183.49 183.49 0 1 0 -366.98 0z' fill='rgba(59%2c 36%2c 122%2c 0.56)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M233.99 514.77 a139.89 139.89 0 1 0 279.78 0 a139.89 139.89 0 1 0 -279.78 0z' fill='rgba(59%2c 36%2c 122%2c 0.56)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1295.07 106.75 a126.31 126.31 0 1 0 252.62 0 a126.31 126.31 0 1 0 -252.62 0z' fill='rgba(59%2c 36%2c 122%2c 0.56)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M-1.89 353.04 a132.23 132.23 0 1 0 264.46 0 a132.23 132.23 0 1 0 -264.46 0z' fill='rgba(59%2c 36%2c 122%2c 0.56)' class='triangle-float2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask2312'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='100%25' y1='50%25' x2='0%25' y2='50%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient2313'%3e%3cstop stop-color='rgba(196%2c 158%2c 255%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(193%2c 132%2c 255%2c 1)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+    background: linear-gradient(to bottom, rgba(29, 24, 24, 0) 0%, rgba(0, 0, 0, 0.786) 59%, rgba(0, 0, 0, 0.65) 100%), url(./bg-img.jpeg) no-repeat;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
 }
 
 .overlay {
@@ -27,7 +25,7 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.5);
+    /* background-color: rgba(255, 255, 255, 0.5); */
 }
 
 .snowflake {
